@@ -5,6 +5,7 @@
  * Date: 7/3/21
  * Time: 11:17 AM
  */
+namespace Peter\FootballAPI;
 use GuzzleHttp\Client;
 
 class FootballAPI
