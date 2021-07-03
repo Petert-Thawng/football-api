@@ -1,0 +1,26 @@
+{
+    "name": "peter/football-api",
+    "description": "Rapid Football API v3",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "authors": [
+        {
+            "name": "Peter",
+            "email": "peter.tzht@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Peter\\FootballAPI\\": "src"
+        },
+        "classmap": [
+            "database/seeds",
+            "database/factories"
+        ]
+    }
+
+}
