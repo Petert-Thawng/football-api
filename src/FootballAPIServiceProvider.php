@@ -5,6 +5,7 @@
  * Date: 7/3/21
  * Time: 11:19 AM
  */
+namespace Peter\FootballAPI;
 use GuzzleHttp\Client;
 use Illuminate\Support\ServiceProvider;
 use App;
