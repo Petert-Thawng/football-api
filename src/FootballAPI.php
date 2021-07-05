@@ -17,9 +17,13 @@ class FootballAPI
         $this->client = $client;
     }
 
-    public function run($uri, $type = 'GET')
+    public function run($uri, $type = 'GET',$formData = [])
     {
-        return json_decode( $this->client->request($type, $uri)->getBody() );
+
+        return json_decode( $this->client->request($type, $uri,
+            [
+                'form_params' => $formData
+            ])->getBody() );
     }
 
 
@@ -139,10 +143,10 @@ class FootballAPI
      * @param date $date
      * @return Collection
      */
-    public function getLeagueMatchesWithDate(int $leagueID,$date)
+    public function getLeagueMatchesBetweenTwoDate(int $leagueID,$season,$startDate, $endDate)
     {
-        $leagueMatches = $this->run("v2/fixtures/league/{$leagueID}/{$date}");
-        return collect($leagueMatches->api);
+        $leagueMatches = $this->run('/v3/fixtures','GET',['league' => $leagueID,'season' => $season,'from' => $startDate,'to' => $endDate]);
+        return collect($leagueMatches->response);
     }
 
 }
