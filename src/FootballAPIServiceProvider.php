@@ -28,7 +28,7 @@ class FootballAPIServiceProvider extends ServiceProvider
                 'base_uri'  =>  'https://api-football-v1.p.rapidapi.com',
                 'headers'   =>  [
                     "X-RapidAPI-Host" => "api-football-v1.p.rapidapi.com",
-                    'X-RapidAPI-Key' => env('APIFOOTBALL_API_KEY')
+                    'X-RapidAPI-Key' => config('football.x-rapidapi-key')
                 ]
             ]);
 
