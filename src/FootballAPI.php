@@ -101,8 +101,8 @@ class FootballAPI
      */
     public function getMatche(int $matchID)
     {
-        $matche = $this->run("/v2/fixtures/id/{$matchID}");
-        return collect($matche->api);
+        $matche = $this->run("v3/fixtures",'GET',['id' => $matchID]);
+        return collect($matche->response);
     }
 
 
