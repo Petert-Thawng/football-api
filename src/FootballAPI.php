@@ -20,10 +20,7 @@ class FootballAPI
     public function run($uri, $type = 'GET',$formData = [])
     {
 
-        return json_decode( $this->client->request($type, $uri,
-            [
-                'form_params' => $formData
-            ])->getBody() );
+        return json_decode( $this->client->request($type, $uri.'?'.http_build_query($formData))->getBody() );
     }
 
 
