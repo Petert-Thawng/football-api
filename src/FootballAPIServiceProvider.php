@@ -14,7 +14,9 @@ class FootballAPIServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-
+        $this->publishes([
+            __DIR__.'/config/football.php' =>  config_path('football.php'),
+        ], 'config');
 
     }
 
