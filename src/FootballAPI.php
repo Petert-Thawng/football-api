@@ -71,10 +71,10 @@ class FootballAPI
      * @param array $filter
      * @return Collection
      */
-    public function getLeagueMatches(int $leagueID)
+    public function getLeagueMatches(int $leagueID, $season)
     {
-        $leagueMatches = $this->run("v2/fixtures/league/{$leagueID}");
-        return collect($leagueMatches->api);
+        $leagueMatches = $this->run("v3/fixtures",'GET',['league' => $leagueID,'season' => $season]);
+        return collect($leagueMatches->response);
     }
 
 
